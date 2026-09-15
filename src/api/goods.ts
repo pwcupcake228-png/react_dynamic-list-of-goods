@@ -6,10 +6,10 @@ const API_URL = `https://mate-academy.github.io/react_dynamic-list-of-goods/good
 export function getAll(): Promise<Good[]> {
   return fetch(API_URL).then(response => {
     if (!response.ok) {
-      throw new Error('Faild to tech goods');
+      throw new Error('Failed to fetch goods');
     }
 
-    return response.json();
+    return response.json() as Promise<Good[]>;
   });
 }
 
